@@ -13,6 +13,9 @@ router.post("/signoutall", company_controller.signoutall)
 
 router.post("/resetpassword", company_controller.resetpassword)
 
+// verify user
+router.put("/verify/:id", company_controller.verifyAccount)
+
 // create test
 router.post("/test", company_controller.createtest)
 

@@ -3,12 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config();
 
 const mongoose = require("mongoose")
-/*var url =
-  "mongodb+srv://vamshi:rGBgBprJbzNiIKBv@development-i76n3.mongodb.net/test?retryWrites=true&w=majority";*/
-  
-var url = "mongodb+srv://admin:admin@testhub-3r1as.mongodb.net/test?retryWrites=true&w=majority";
+
+var url = process.env.DB;
 mongoose.Promise = global.Promise
 // Connecting to the database
 mongoose
