@@ -3,6 +3,9 @@ const router = express.Router()
 const company_controller = require("../controllers/company.controller")
 const auth = require("../middlewares/auth")
 
+console.log("in company controller");
+
+
 router.post("/signup", company_controller.signup)
 
 router.post("/signin", company_controller.signin)
@@ -20,7 +23,7 @@ router.put("/verify/:id", company_controller.verifyAccount)
 router.post("/test", company_controller.createtest)
 
 // delete test with id
-router.delete("/test/:id", company_controller.deletetest)
+router.delete("/test/:testId", company_controller.deletetest)
 
 // delete all tests
 router.delete("/test", company_controller.deletetest)
@@ -30,6 +33,9 @@ router.get("/test/:id", company_controller.testresult)
 
 // get all tests
 router.get("/test", company_controller.testresult)
+
+// add question
+router.post("/question/:testId", company_controller.addQuestion)
 
 router.get("/", company_controller.dashboard)
 
